@@ -19,6 +19,16 @@ public class Comment {
 	}
 
 	// 매개변수 생성자
+	public Comment(int commentNo, String commentContent, String createDate, String secessionFlag, int userNo,
+			int boardNo) {
+		super();
+		this.commentNo = commentNo;
+		this.commentContent = commentContent;
+		this.createDate = createDate;
+		this.secessionFlag = secessionFlag;
+		this.userNo = userNo;
+		this.boardNo = boardNo;
+	}
 	
 	// 메서드
 	public int getCommentNo() {

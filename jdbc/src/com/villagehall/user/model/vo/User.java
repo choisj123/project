@@ -20,6 +20,20 @@ public class User {
 	}
 
 	//매개변수 생성자
+	public User(int userNo, String userId, String userPw, String userName, String nickname, String email, String phone,
+			String profile, String enrollDate, String secessionFlag) {
+		super();
+		this.userNo = userNo;
+		this.userId = userId;
+		this.userPw = userPw;
+		this.userName = userName;
+		this.nickname = nickname;
+		this.email = email;
+		this.phone = phone;
+		this.profile = profile;
+		this.enrollDate = enrollDate;
+		this.secessionFlag = secessionFlag;
+	}
 	
 	
 	//메서드

@@ -26,11 +26,24 @@ public class Board {
 	}
 
 	//매개변수
+	public Board(int boardNo, String boardTitle, String boardContent, String createDate, int readCount, String location,
+			String deleteFlag, int userNo) {
+		super();
+		this.boardNo = boardNo;
+		this.boardTitle = boardTitle;
+		this.boardContent = boardContent;
+		this.createDate = createDate;
+		this.readCount = readCount;
+		this.location = location;
+		this.deleteFlag = deleteFlag;
+		this.userNo = userNo;
+	}
 	
 	//메서드
 	public int getBoardNo() {
 		return boardNo;
 	}
+
 
 	public void setBoardNo(int boardNo) {
 		this.boardNo = boardNo;
