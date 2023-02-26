@@ -35,7 +35,20 @@ public class User {
 		this.secessionFlag = secessionFlag;
 	}
 	
-	
+	// 매개변수 생성자2 (비밀번호 탈퇴여부 제외)
+	public User(int userNo, String userId, String userName, String nickname, String email, String phone, String profile,
+			String enrollDate) {
+		super();
+		this.userNo = userNo;
+		this.userId = userId;
+		this.userName = userName;
+		this.nickname = nickname;
+		this.email = email;
+		this.phone = phone;
+		this.profile = profile;
+		this.enrollDate = enrollDate;
+	}
+
 	//메서드
 	public int getUserNo() {
 		return userNo;
