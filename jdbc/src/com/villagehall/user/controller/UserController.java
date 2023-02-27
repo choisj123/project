@@ -3,7 +3,7 @@ package com.villagehall.user.controller;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import com.villagehall.nonUser.controller.NonUserController;
+import static com.villagehall.nonUser.controller.NonUserController.*;
 import com.villagehall.user.model.service.UserService;
 import com.villagehall.user.model.vo.User;
 
