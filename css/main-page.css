@@ -138,18 +138,15 @@ nav li {
   padding-top: 8px;
 }
 
-nav li:hover {
-  background-color: #55710f;
-}
-
-nav li a:hover {
-  background-color: #55710f;
-  color: white;
-}
 
 nav a {
   color: #55710f;
   text-decoration: none;
+}
+
+nav ul li table td{
+  color: white;
+
 }
 
 .right-body {
