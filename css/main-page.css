@@ -153,6 +153,158 @@ nav ul li table td{
   flex-basis: 71%;
 }
 
+/* ************ 지도 API SECTION 가급적 건들지 말아주세요 ㅠㅠㅠ ************* */
+.container{
+  width: 400px;
+  height: 300px;
+}
+
+.container div{
+  border: 1px solid black;
+}
+
+ .info{
+  height: 60px;
+}
+
+.info{
+  display: flex;
+}
+
+.title{
+  flex-basis: 94%;
+}
+
+.close{
+  flex-basis: 6%;
+}
+
+.nav-section{
+  display: flex;
+}
+
+.left{
+  flex-basis: 50%;
+}
+
+.right{
+  text-align: end;
+  flex-basis:50%;
+}
+.left a:nth-child(1){
+  font-size: 12px;
+}
+.left a:nth-child(2){
+  font-size: 12px;
+}
+.left a:nth-child(3){
+  font-size: 12px;
+}
+
+.right > span:first-child{
+  font-size: 12px;
+}
+
+.right > span:last-child{
+  font-size: 12px;
+}
+
+.main{
+  display: flex;
+  height: 212px;
+}
+
+.main >div:nth-child(1){
+  flex-basis: 15%;
+}
+
+.main >div:nth-child(2){
+  flex-basis: 70%;
+}
+
+.main >div:nth-child(3){
+  flex-basis: 15%;
+}
+
+.main-content > div:first-child{
+  height: 20%;
+  justify-content: left;
+ 
+}
+
+.main-content > div:last-child{
+  height: 80%;
+
+}
+
+.main-content > div p:first-child{
+  margin-top: 6px;
+}
+
+/* 커스텀 오버레이 스타일링 */
+.overlay {
+  position: relative;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  font-size: 14px;
+  width: 200px;
+  height: 100px;
+  padding: 10px;
+}
+
+.overlay .overlay_close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+}
+
+.overlay .overlay_content {
+  margin-top: 20px;
+}
+
+.customoverlay {
+  position:relative;
+  bottom:45px;
+  border-radius:6px;
+  border:1px solid #ccc;
+  border-bottom:none;
+  background:#fff;
+  width:200px;
+  padding:5px;
+
+}
+.customoverlay:before {
+  content:"";
+  display:block;
+  position:absolute;
+  left:50%;
+  bottom:-9px;
+  width:0;
+  height:0;
+  margin-left:-9px;
+  border-top:10px solid #ccc;
+  border-right:10px solid transparent;
+  border-left:10px solid transparent;
+}
+
+.customoverlay .overlaybody {
+  padding:10px;
+}
+.customoverlay .btn-close {
+  position:absolute;
+  top:5px;
+  right:5px;
+  color:#888;
+  font-size:14px;
+  text-decoration:none;
+}
+
+/* ************여기까지 지도 API SECTION 가급적 건들지 말아주세요 ㅠ퓨ㅠ**************/
+
+
 .hashtag {
   display: flex;
 }
