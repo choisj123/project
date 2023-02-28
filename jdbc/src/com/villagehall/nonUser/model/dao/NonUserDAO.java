@@ -112,7 +112,7 @@ public class NonUserDAO {
 		
 		try {
 			
-			String sql = prop.getProperty("sighUp");
+			String sql = prop.getProperty("signUp");
 			
 			pstmt = conn.prepareStatement(sql);
 			
