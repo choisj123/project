@@ -166,4 +166,91 @@ public class NonUserDAO {
 		return loginUser;
 	}
 
+	/** 아이디 찾기 DAO
+	 * @param conn
+	 * @param email
+	 * @return findId
+	 * @throws Exception
+	 */
+	public String findId(Connection conn, String email) throws Exception{
+		
+		String findId = null;
+		
+		try {
+			String sql = prop.getProperty("findId");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, email);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				findId = rs.getString("USER_ID");
+			}
+						
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return findId;
+	}
+
+	public int emailCheck(Connection conn, String userId, String email) throws Exception{
+		
+		int emailCheck = 0;
+		
+		try {
+			
+			String sql = prop.getProperty("emailCheck");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, userId);
+			pstmt.setString(2, email);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				emailCheck = rs.getInt(1);
+			}
+			
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return emailCheck;
+				
+	}
+
+	/** 비밀번호 찾기 DAO
+	 * @param conn
+	 * @param userId
+	 * @param userPw1
+	 * @return findPw
+	 * @throws Exception
+	 */
+	public int findPw(Connection conn, String userId, String userPw1) throws Exception {
+		
+		int findPw = 0;
+		
+		try {
+			
+			String sql = prop.getProperty("findPw");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, userPw1);
+			pstmt.setString(2, userId);
+			
+			findPw = pstmt.executeUpdate();
+			
+		} finally {
+			close(pstmt);
+		}
+		return findPw;
+	}
+
 }
