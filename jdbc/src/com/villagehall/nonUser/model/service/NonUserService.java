@@ -84,4 +84,57 @@ public class NonUserService {
 		return loginUser;
 	}
 
+	/** 아이디 찾기 서비스
+	 * @param email
+	 * @return findId
+	 * @throws Exception
+	 */
+	public String findId(String email) throws Exception {
+
+		Connection conn = getConnection();
+		
+		String findId = dao.findId(conn, email);
+		
+		close(conn);
+		
+		return findId;
+	}
+
+	/** 이메일체크 서비스 (아이디확인후 아이디,이메일 일치하는 회원 조회)
+	 * @param userId
+	 * @param email
+	 * @return emailCheck
+	 * @throws Exception
+	 */
+	public int emailCheck(String userId, String email) throws Exception{
+		
+		Connection conn = getConnection();
+		
+		int emailCheck = dao.emailCheck(conn, userId, email);
+		
+		close(conn);
+		
+		return emailCheck;
+	}
+
+	/** 비밀번호 찾기 서비스(변경)
+	 * @param userId
+	 * @param userPw1
+	 * @return findPw
+	 * @throws Exception
+	 */
+	public int findPw(String userId, String userPw1) throws Exception{
+		
+		Connection conn = getConnection();
+		
+		int findPw = dao.findPw(conn, userId, userPw1);
+		
+		if(findPw > 0) commit(conn);
+		else			rollback(conn);
+		
+		close(conn);
+		
+		return findPw;
+	}
+
 }
