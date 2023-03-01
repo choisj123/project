@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/landing-page.css" />
+    <script defer src="/js/landing.js"></script>
+    <title>landing</title>
+    <style>
+      div > img {
+        width: 500px;
+        height: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header"><img src="/src/로고.png" alt="마을회관" /></div>
+    <div>
+      <div class="center1">
+        <img class="img1" src="/src/나무게시판.png" alt="나무판자" />
+        <p class="text">
+          우리 마을회관은 여러분이 살고있는<br />
+          동네에서 일어나는 소식들을 서로서로<br />
+          공유하는 쉼터입니다.
+        </p>
+        <div class="change">
+          <p class="text1">
+            위치 서비스에 동의 해야<br />
+            서비스를 이용하실 수 있습니다.<br />
+            동의하시겠습니까?
+          </p>
+          <!-- 동의/비동의 버튼 -->
+          <div class="btn-group">
+            <button class="agree">동의</button>
+            <button class="disagree">비동의</button>
+          </div>
+        </div>
+
+        <!-- 뒤로가기 -->
+        <div class="change1 hidden">
+          <p class="text1">
+            서비스에 동의하기를 원하시면<br />
+            뒤로가기를 누른 후<br />
+            동의 버튼을 눌러주세요.
+          </p>
+          <div class="btn-group">
+            <button class="back">뒤로가기</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

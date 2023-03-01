@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+
+    <link rel="stylesheet" href="/css/sign-up-page.css">
+
+    <script
+    src="https://kit.fontawesome.com/2f1bf0eac7.js"
+    crossorigin="anonymous">
+    </script>
+
+</head>
+<body>
+
+    <main>
+         <!--헤더 영역 시작-->
+        <header>
+            <!--로고 영역(클릭하면 메인페이지로 넘어감)-->
+            <section>
+                <a href ="#">
+                    <img src="/src/로고.png" id="home-logo">
+                </a>
+            </section>
+
+        </header>
+        <!--헤더 영역 끝-->
+
+        <!--바디 부분 시작-->
+        <body>
+            <!--콘텐츠 작성 영역-->
+            <section class="content">
+                <h1 class="sign-up-text">회원가입</h1>
+            </section>
+
+            <section class="content-2">
+                <!--회원가입시 필요한 정보 기입 영역-->
+                <form action="#" name="sign-up-form">
+                    <fieldset id="sign-up-area">
+
+                        <section class="sign-up-1">
+                            <!--아이디-->
+                            아이디<br><input type="text" name="inputId" class="input-text">
+                            <button id="id-check-btn">중복 확인</button><br><br>
+                            
+                            <!--비밀번호-->
+                            비밀번호<br><input type="password" input name="password" class="input-text"><br><br>
+                            비밀번호 확인<br><input type="password" input name="password-check" class="input-text"><br><br>
+                            
+                            <!--닉네임-->
+                            닉네임<br><input type="text" name="Nickname" class="input-text">
+                            <button id="nickname-check-btn">중복 확인</button><br><br>
+                            <!--연락처-->
+                            연락처<br><input type="tel" name="tel" class="input-text" ><br><br>
+                            
+                            <!--이메일-->
+                            이메일<br><input type="email" name="email" class="input-text">
+                            <button id="email-check-btn">인증</button><br><br>
+
+                            <!--프로필사진-->
+                            프로필사진<br>
+                            <input type="file" name="profile-pic">
+                            
+
+                        </section>                       
+
+                    </fieldset>
+
+                      <!--회원가입/카카오로 시작하기-->
+                      <section>
+
+                        <article class="sign-up-article-1">
+                            <button type="submit" id="signup-btn">회원가입</button><br>
+                        </article >
+
+                        <article class="sign-up-article-2">
+                            <a href="#"><div class="kakao-signup"><i class="fa-solid fa-comment" id="text-balloon"></i>카카오로 시작하기</div></a>
+                        </article>
+
+                      </section>
+
+                </form>
+
+</body>
+        
+    </main>
+
+    <!-- 푸터 -->
+    <footer>
+        <p>Copyright &copy; 2023. Villege Hall Community. All rights reserved</p>
+      
+        <article>
+            <a href="#">프로젝트 소개</a>
+            <span>|</span>
+            <a href="#">이용약관</a>
+            <span>|</span>
+            <a href="#">개인정보처리방침</a>
+            <span>|</span>
+            <a href="#">고객센터</a>
+            </article>
+    </footer>
+     
+</html>
