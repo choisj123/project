@@ -16,6 +16,7 @@ public class NonUserController {
 	
 	private NonUserService service = new NonUserService();
 	private UserController userController = new UserController();
+	private BoardController boardController = new BoardController();
 
 	// 비회원(공통) 메뉴 로그인 회원가입 아이디찾기 비밀번호찾기 게시
 	public void mainMenu() {
@@ -30,6 +31,7 @@ public class NonUserController {
 				System.out.println("2. 회원가입");
 				System.out.println("3. 아이디 찾기");
 				System.out.println("4. 비밀번호 찾기");
+				System.out.println("5. 게시판");
 				System.out.println("0. 프로그램 종료");
 				
 				System.out.print("\n메뉴선택:");
@@ -43,6 +45,7 @@ public class NonUserController {
 				case 2: signUp(); break; // 회원 가입
 				case 3: findId(); break; // 아이디 찾기
 				case 4: findPw(); break; // 비밀번호 찾기
+				case 5: boardController.BoardMenu(loginUser); break; // 게시판 이동
 				case 0:
 					System.out.println("프로그램 종료");
 					break;
@@ -188,7 +191,7 @@ public class NonUserController {
 			
 			System.out.println();
 			if(loginUser != null) { // 로그인 성공
-				System.out.println(loginUser.getUserName() + "님 로그인 성공");
+				System.out.println(loginUser.getNickname() + "님 환영합니다");
 				userController.userMenu(loginUser);
 			} else { // 로그인 실패
 				System.out.println("아이디나 비밀번호 불일치");

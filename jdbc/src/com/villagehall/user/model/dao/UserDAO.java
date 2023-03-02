@@ -64,4 +64,116 @@ public class UserDAO {
 		return checkPw;
 	}
 
+	/** 변경할 닉네임 중복검사 DAO
+	 * @param conn
+	 * @param updateNickname
+	 * @return nicknameDupCheck
+	 * @throws Exception
+	 */
+	public int nicknameDupCheck(Connection conn, String updateNickname) throws Exception{
+		
+		int nicknameDupCheck = 0;
+		
+		try {
+			
+			String sql = prop.getProperty("nicknameDupCheck");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, updateNickname);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				nicknameDupCheck = rs.getInt(1);
+			}
+			
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return nicknameDupCheck;
+	}
+
+	/** 닉네임 변경 DAO
+	 * @param conn
+	 * @param userId
+	 * @param updateNickname
+	 * @return result
+	 * @throws Exception
+	 */
+	public int updateNickname(Connection conn, String userId, String updateNickname) throws Exception {
+		
+		int result = 0;
+		
+		try {
+			
+			String sql = prop.getProperty("updateNickname");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, updateNickname);
+			pstmt.setString(2, userId);
+			
+			result = pstmt.executeUpdate();
+			
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
+	public int updateEmail(Connection conn, String userId, String updateEmail) throws Exception {
+		
+		int result = 0;
+		
+		try {
+			
+			String sql = prop.getProperty("updateEmail");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, updateEmail);
+			pstmt.setString(2, userId);
+			
+			result = pstmt.executeUpdate();
+			
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
+	/** 비밀번호 수정 DAO
+	 * @param conn
+	 * @param userId
+	 * @param userPw1
+	 * @return updatePw
+	 * @throws Exception
+	 */
+	public int updatePw(Connection conn, String userId, String userPw1) throws Exception {
+		
+		int updatePw = 0;
+		
+		try {
+			
+			String sql = prop.getProperty("updatePw");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, userPw1);
+			pstmt.setString(2, userId);
+			
+			updatePw = pstmt.executeUpdate();
+			
+		} finally {
+			close(pstmt);
+		}
+		
+		return updatePw;
+	}
+
 }
