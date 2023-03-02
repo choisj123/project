@@ -183,7 +183,9 @@ nav a {
   height: 40%;
   border: 1px solid rgb(207, 41, 41);
 }
-
+.date{
+  height: 10%;
+}
 .notice-fave{
   height: 30%;
   display: flex;
@@ -194,7 +196,7 @@ nav a {
 }
 
 .weather{
-  height: 15%;
+  height: 10%;
   border: 1px solid yellow;
 }
 
@@ -231,6 +233,10 @@ nav a {
   flex-basis: 30%;
   padding-right: 50px;
   text-align: center;
+}
+
+.post-list{
+  text-align: right;
 }
 
 .fave-notice section:nth-of-type(1){
