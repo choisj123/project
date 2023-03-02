@@ -24,32 +24,28 @@ public class NonUserController {
 		
 		do {
 			try {
-				// 로그인 X
-				if(loginUser == null) {
-					System.out.println("메서드 확인용 디스플레이");
-					System.out.println("1. 로그인");
-					System.out.println("2. 회원가입");
-					System.out.println("0. 프로그램 종료");
+				
+				System.out.println("메서드 확인용 디스플레이");
+				System.out.println("1. 로그인");
+				System.out.println("2. 회원가입");
+				System.out.println("0. 프로그램 종료");
+				
+				System.out.print("\n메뉴선택:");
 					
-					System.out.print("\n메뉴선택:");
+				input = sc.nextInt();
 					
-					input = sc.nextInt();
+				sc.nextLine(); // 개행
 					
-					sc.nextLine(); // 개행
-					
-					switch(input) {
-					case 1: login(); break; // 로그인
-					case 2: signUp(); break; // 회원 가입
-					case 0:
-						System.out.println("프로그램 종료");
-						break;
-					default:
-						System.out.println("번호 다시입력");
-					}
-					
-				} else { // 로그인 O
-					UserController.userMenu(loginUser);
+				switch(input) {
+				case 1: login(); break; // 로그인
+				case 2: signUp(); break; // 회원 가입
+				case 0:
+					System.out.println("프로그램 종료");
+					break;
+				default:
+					System.out.println("번호 다시입력");
 				}
+					
 				
 			} catch(InputMismatchException e) {
 				e.printStackTrace();
@@ -186,6 +182,7 @@ public class NonUserController {
 			System.out.println();
 			if(loginUser != null) { // 로그인 성공
 				System.out.println(loginUser.getUserName() + "님 로그인 성공");
+				userController.userMenu(loginUser);
 			} else { // 로그인 실패
 				System.out.println("아이디나 비밀번호 불일치");
 			}
@@ -193,6 +190,11 @@ public class NonUserController {
 			
 		} catch(Exception e) {
 			System.out.println("로그인중 예외 발생");
+			e.printStackTrace();
+			
 		}
 	}
+	
+	
+	
 }
