@@ -100,11 +100,10 @@ header > section:nth-of-type(3) {
 
 .body {
   display: flex;
-  height: 1140px;
 }
 
 .left-body {
-  flex-basis: 23.5%;
+  flex-basis: 19%;
   border-right: 1px solid #55710f;
   flex-direction: column;
 }
@@ -154,8 +153,7 @@ nav a {
 }
 
 .right-body {
-  flex-basis: 100%;
-  border: 1px solid black;
+  flex-basis: 71%;
 }
 
 .hashtag {
@@ -179,115 +177,9 @@ nav a {
   font-weight: bold;
 }
 
-.map {
-  height: 40%;
-  border: 1px solid rgb(207, 41, 41);
-}
-
-.notice-fave{
-  height: 30%;
-  display: flex;
-  border: 1px solid black;
-  justify-content: center;
-  align-items: center;
-  font-size: 3px;
-}
-
-.weather{
-  height: 15%;
-  border: 1px solid yellow;
-}
-
-.notice-fave > section{
-  margin-inline-end: 30px;
-  border: solid 1px black;
-}
-
-.notice{
-  height: 80%;
-}
-
-.fave{
-  height: 80%;
-}
-
-.notice > div{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#공지사항 {
-  text-align: center;
-}
-
-#title{
-  flex-basis: 70%;
-  padding-left: 50px;
-  text-align: left;
-}
-
-#Views{
-  flex-basis: 30%;
-  padding-right: 50px;
-  text-align: center;
-}
-
-.fave-notice section:nth-of-type(1){
-
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-
-}
-
-#f-title{
-  flex-basis: 70%;
-  padding-left: 50px;
-  text-align: left;
-}
-
-#f-Views{
-  flex-basis: 30%;
-  padding-right: 50px;
-  text-align: center;
-}
-
-
-#plus{
-  text-align: right;
-}
-
-#title{
-  flex-basis: 70%;
-  padding-left: 50px;
-  text-align: left;
-}
-
-#Views{
-  flex-basis: 30%;
-  padding-right: 50px;
-  text-align: center;
-}
-
-.fave > div{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#인기글{
-  text-align: center;
-}
-
-#plus2{
-  text-align: right;
-}
-
 footer {
   background-color: #d0d3c6;
   height: 150px;
-  
   justify-content: center;
   align-content: center;
   text-align: center;
