@@ -100,10 +100,11 @@ header > section:nth-of-type(3) {
 
 .body {
   display: flex;
+  height: 1140px;
 }
 
 .left-body {
-  flex-basis: 19%;
+  flex-basis: 23.5%;
   border-right: 1px solid #55710f;
   flex-direction: column;
 }
@@ -150,7 +151,8 @@ nav ul li table td{
 }
 
 .right-body {
-  flex-basis: 71%;
+  flex-basis: 100%;
+  border: 1px solid black;
 }
 
 /* ************ 지도 API SECTION 가급적 건들지 말아주세요 ㅠㅠㅠ ************* */
@@ -326,9 +328,45 @@ nav ul li table td{
   font-weight: bold;
 }
 
+.map {
+  height: 40%;
+  border: 1px solid rgb(207, 41, 41);
+}
+.date{
+  height: 10%;
+}
+.notice-fave{
+  height: 30%;
+  display: flex;
+  border: 1px solid black;
+  justify-content: center;
+  align-items: center;
+  font-size: 3px;
+}
+
+.weather{
+  height: 15%;
+  border: 1px solid yellow;
+}
+
+.notice-fave > section{
+  margin-inline-end: 30px;
+  border: solid 1px black;
+}
+
+.notice{
+  height: 80%;
+}
+
+.fave{
+  height: 80%;
+}
+
+
 footer {
   background-color: #d0d3c6;
   height: 150px;
+  
   justify-content: center;
   align-content: center;
   text-align: center;
