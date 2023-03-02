@@ -196,7 +196,7 @@ nav a {
 }
 
 .weather{
-  height: 10%;
+  height: 15%;
   border: 1px solid yellow;
 }
 
@@ -213,82 +213,6 @@ nav a {
   height: 80%;
 }
 
-.notice > div{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#공지사항 {
-  text-align: center;
-}
-
-#title{
-  flex-basis: 70%;
-  padding-left: 50px;
-  text-align: left;
-}
-
-#Views{
-  flex-basis: 30%;
-  padding-right: 50px;
-  text-align: center;
-}
-
-.post-list{
-  text-align: right;
-}
-
-.fave-notice section:nth-of-type(1){
-
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-
-}
-
-#f-title{
-  flex-basis: 70%;
-  padding-left: 50px;
-  text-align: left;
-}
-
-#f-Views{
-  flex-basis: 30%;
-  padding-right: 50px;
-  text-align: center;
-}
-
-
-#plus{
-  text-align: right;
-}
-
-#title{
-  flex-basis: 70%;
-  padding-left: 50px;
-  text-align: left;
-}
-
-#Views{
-  flex-basis: 30%;
-  padding-right: 50px;
-  text-align: center;
-}
-
-.fave > div{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#인기글{
-  text-align: center;
-}
-
-#plus2{
-  text-align: right;
-}
 
 footer {
   background-color: #d0d3c6;
