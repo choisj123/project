@@ -16,8 +16,8 @@ public class NonUserController {
 	
 	private NonUserService service = new NonUserService();
 	private UserController userController = new UserController();
-	private BoardController boardController = new BoardController();
-	
+
+	// 비회원(공통) 메뉴 로그인 회원가입 아이디찾기 비밀번호찾기 게시
 	public void mainMenu() {
 		
 		int input = -1;
@@ -28,6 +28,11 @@ public class NonUserController {
 				System.out.println("메서드 확인용 디스플레이");
 				System.out.println("1. 로그인");
 				System.out.println("2. 회원가입");
+<<<<<<< HEAD
+=======
+				System.out.println("3. 아이디 찾기");
+				System.out.println("4. 비밀번호 찾기");
+>>>>>>> 4954f90a0f3f50817ebb4fae88fd73075db4ab20
 				System.out.println("0. 프로그램 종료");
 				
 				System.out.print("\n메뉴선택:");
@@ -39,6 +44,11 @@ public class NonUserController {
 				switch(input) {
 				case 1: login(); break; // 로그인
 				case 2: signUp(); break; // 회원 가입
+<<<<<<< HEAD
+=======
+				case 3: findId(); break; // 아이디 찾기
+				case 4: findPw(); break; // 비밀번호 찾기
+>>>>>>> 4954f90a0f3f50817ebb4fae88fd73075db4ab20
 				case 0:
 					System.out.println("프로그램 종료");
 					break;
@@ -56,6 +66,7 @@ public class NonUserController {
 		} while(input != 0);
 		
 	}
+
 
 	/**
 	 *  회원 가입 화면
@@ -168,15 +179,17 @@ public class NonUserController {
 	 * 로그인 화면
 	 */
 	private void login() {
-		System.out.println("로그인");
-		
-		System.out.print("아이디 : ");
-		String userId = sc.next();
-		
-		System.out.print("비밀번호 : ");
-		String userPw = sc.next();
 		
 		try {
+		System.out.println("로그인");
+		
+			System.out.print("아이디 : ");
+			String userId = sc.next();
+		
+			System.out.print("비밀번호 : ");
+			String userPw = sc.next();
+		
+		
 			loginUser = service.login(userId, userPw);
 			
 			System.out.println();
@@ -196,5 +209,104 @@ public class NonUserController {
 	}
 	
 	
+<<<<<<< HEAD
 	
 }
+=======
+	/**
+	 * 아이디 찾기
+	 */
+	private void findId() {
+		System.out.println("아이디 찾기");
+		
+		try {
+			System.out.print("이메일 입력 : ");
+			String email = sc.next();
+			
+			String findId = service.findId(email);
+			
+			if(findId != null) {
+				System.out.println("아이디는 " + findId + "입니다");
+			} else {
+				System.out.println("일치하는 이메일 정보가 없습니다");
+			}
+			System.out.println();
+					
+		} catch(Exception e) {
+			System.out.println("아이디 찾기 중 예외발생");
+			e.printStackTrace();
+		}
+		
+	}
+	
+
+	/**
+	 *  비밀번호 찾기 (이메일 인증번호는 아직)
+	 */
+	private void findPw() {
+		
+		System.out.println("비밀번호 찾기");
+		
+		try {
+			while(true) {
+				System.out.print("아이디 입력 : ");
+				String userId = sc.next();
+				
+				int result = service.idDupCheck(userId);
+				
+				System.out.println();
+				
+				// result가 1(COUNT)인 경우 아이디 있다는 뜻
+				if (result != 1) {
+					System.out.println("등록된 아이디가 없습니다");
+					return;
+				} else {
+					System.out.println("이메일 입력 : ");
+					String email = sc.next();
+					
+					int emailCheck = service.emailCheck(userId, email);
+					
+					if(emailCheck == 1) {
+						System.out.println("아이디 이메일 일치");
+						// 일치하면 비밀번호 수정
+						while(true) {
+							System.out.print("수정할 비밀번호 : ");
+							String userPw1 = sc.next();
+							System.out.print("수정할 비밀번호 확인 : ");
+							String userPw2 = sc.next();
+							
+							System.out.println();
+							if (userPw1.equals(userPw2)) { // 비밀번호 일치
+								
+								int findPw = service.findPw(userId, userPw1);
+								if(findPw > 0) {
+									System.out.println("비밀번호를 변경하였습니다");
+								} else {
+									System.out.println("비밀번호 변경 실패");
+								}
+								System.out.println();
+								
+								return;
+							} else { // 비밀번호 불일치
+								System.out.println("비밀번호 불일치");
+							}
+							System.out.println();
+						}
+						
+						
+					} else {
+						System.out.println("등록된 이메일이 일치하지 않습니다");
+						return;
+					}
+				}
+			}
+						
+		} catch(Exception e) {
+			System.out.println("비밀번호 찾기 중 예외 발생");
+			e.printStackTrace();
+		}
+	}
+	
+		
+}
+>>>>>>> 4954f90a0f3f50817ebb4fae88fd73075db4ab20

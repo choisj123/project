@@ -33,7 +33,7 @@ header > section:nth-child(1) {
     margin-left: 510px;
 }
   
-.sign-up-text {
+.sign-in-text {
     display: flex;
     justify-content: center;
 }
@@ -45,71 +45,86 @@ header > section:nth-child(1) {
     justify-content: center;
 }
 
-#sign-up-area{
-    width: 600px; 
-    height: 600px;
+#sign-in-area{
+    width: 500px; 
+    height: 300px;
     display: flex;
     justify-content: center;
     padding-top: 50px;
     border-radius: 20px;
+    border: 1px solid gray;
     
 }
 
 .input-text{
-    width: 280px;
-    height: 35px;
-    background-color: rgb(240, 244, 240);
-    border-radius: 5px;
-    border:0;
+    
+    border: none;
+    outline : 0;
+    width: 200px;
+    height: 40px;
+    font-size: large;
+    background-color:rgb(240, 244, 240);
 }
 
-#id-check-btn{
-    background-color: #55710F;
-    color:white;
-    border-radius: 5px;
-    border: solid #55710F;
+/*아이디 입력창*/
+#id-area{
+
+    width: 350px;
+    height: 55px;
+    border:1px solid rgb(240, 244, 240);
+    border-radius: 10px;
+    background-color:rgb(240, 244, 240);
 }
 
-#nickname-check-btn{
-    background-color: #55710F;
-    color:white;
-    border-radius: 5px;
-    border: solid #55710F;
-}
-
-#email-check-btn{
-    background-color: #55710F;
-    color:white;
-    border-radius: 5px;
-    border: solid #55710F;
-    width: 70px;
+/*비밀번호 입력창*/
+#pw-area{
+    width: 350px;
+    height: 55px;
+    border:1px solid rgb(240, 244, 240);
+    border-radius: 10px;
+    background-color:rgb(240, 244, 240);    
 }
 
 
-
-/*회원가입 버튼부분 article*/
-.sign-up-article-1{
-
+/*로그인 버튼부분*/
+.signInBtn-article{
     display: flex;
     justify-content: center;
     padding-top: 10px;
-     
+    padding-bottom: 40px;
 }
-
-/*회원가입 버튼*/
-#signup-btn{
-    width: 250px;
-    height: 35px;
+.signInBtn{
+    border: 1px solid #55710f; 
     background-color: #55710f;
-    border: 1px solid #55710f;
     color: white;
     border-radius: 8px;
     font-size: large;
-    
+    width: 250px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    padding-top: 5px;
+    cursor: pointer;
 }
 
-/*카카오로 시작하기 부분 article*/
-.sign-up-article-2{
+/*비밀번호 찾기/ 아이디 찾기/ 회원가입*/
+
+.id-pw-found{
+    display: flex;
+    justify-content: center;
+     
+}
+
+.found{
+    padding-left: 25px;
+    text-decoration: none;    
+    color: black;
+}
+
+
+
+/*카카오로 로그인하기 부분 article*/
+.sign-in-article-1{
 
     display: flex;
     justify-content: center;
@@ -118,23 +133,24 @@ header > section:nth-child(1) {
   
 }
 
-.sign-up-article-2 a {
+.sign-in-article-1 a {
     text-decoration: none;
 } 
 
 
-/*카카오로 시작하기 버튼*/
-.kakao-signup{
+/*카카오로 로그인 버튼*/
+.kakao-signin{
     border: 1px solid yellow;
     background-color: yellow;
     color: black;
-    width: 250px;
-    height:35px;
+    width: 300px;
+    height:40px;
+    font-size: large;
     border-radius: 8px;
     display: flex;
     justify-content: center;
     padding-top: 8px;
-    
+
     
 }
 
@@ -165,7 +181,7 @@ footer {
     font-weight: bold;
   }
   footer a {
-    
+
     text-decoration: none;
     color: black;
   }

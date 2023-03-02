@@ -29,6 +29,10 @@ public class UserController {
 			try {
 				System.out.println("임시 로그인 메뉴");
 				System.out.println("1. 로그인 회원 정보 수정");
+<<<<<<< HEAD
+=======
+				System.out.println("0. 로그아웃");
+>>>>>>> 4954f90a0f3f50817ebb4fae88fd73075db4ab20
 				
 				System.out.print("\n메뉴 선택 :");
 				
@@ -38,6 +42,13 @@ public class UserController {
 				System.out.println();
 				switch(input) {
 				case 1: updateInfo(loginUser); break;
+<<<<<<< HEAD
+=======
+				case 0: 
+					System.out.println("로그아웃이 완료되었습니다");
+					loginUser = null;
+					return;
+>>>>>>> 4954f90a0f3f50817ebb4fae88fd73075db4ab20
 				default: System.out.println("임시임");
 				}
 				System.out.println();
