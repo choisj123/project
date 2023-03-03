@@ -195,6 +195,14 @@ nav a {
   font-size: 3px;
 }
 
+#notice-title{
+  text-align: center;
+}
+
+#fave-title{
+  text-align: center;
+}
+
 .weather{
   height: 15%;
   border: 1px solid yellow;
