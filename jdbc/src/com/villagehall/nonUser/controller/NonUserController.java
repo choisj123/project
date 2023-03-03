@@ -45,7 +45,9 @@ public class NonUserController {
 				case 2: signUp(); break; // 회원 가입
 				case 3: findId(); break; // 아이디 찾기
 				case 4: findPw(); break; // 비밀번호 찾기
-				case 5: boardController.BoardMenu(loginUser); break; // 게시판 이동
+				case 5: System.out.println(loginUser); boardController.BoardMenu(loginUser);
+				break; // 게시판 이동
+				
 				case 0:
 					System.out.println("프로그램 종료");
 					break;

@@ -32,7 +32,7 @@ public class BoardController {
 					System.out.println("4.FAQ");
 					System.out.println("9.뒤로가기");
 					System.out.println("0.로그아웃");
-				} else {
+				} else if(loginUser == null) {
 					System.out.println("게시판 메뉴");
 					System.out.println("1.공지사항");
 					System.out.println("2.전체글");
@@ -57,8 +57,9 @@ public class BoardController {
 					case 9: System.out.println("이전메뉴로 돌아갑니다");
 					return;
 					case 0: System.out.println("로그아웃");
+					loginUser = null;
 					input = 0;
-					NonUserController.loginUser = null;
+					
 					
 					NonUserController nonUserController = new NonUserController();
 					nonUserController.mainMenu();

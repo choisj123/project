@@ -51,6 +51,7 @@ public class UserController {
 				case 0: 
 					System.out.println("로그아웃이 완료되었습니다");
 					loginUser = null;
+					System.out.println(loginUser);
 					return;
 				default: System.out.println("임시임");
 				}
@@ -67,7 +68,7 @@ public class UserController {
 	
 	/**
 	 *  회원 정보 수정
-	 * @param loginUser 
+	 * @param LoginUser 
 	 */
 	private void updateInfo(User loginUser) throws Exception{
 		
@@ -105,6 +106,7 @@ public class UserController {
 				return;
 				case 0: System.out.println("로그아웃되셨습니다");
 				loginUser = null;
+				System.out.println(loginUser);
 				return;
 				default : System.out.println("번호 다시 입력");
 				}
