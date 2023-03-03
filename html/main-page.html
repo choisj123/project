@@ -5,18 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="../css/main-page.css" />
+    <link rel="stylesheet"  href="../css/main-page.css" />
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=	196b8c346b121bd08b2a475bfa001dd0"></script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=	196b8c346b121bd08b2a475bfa001dd0&libraries=LIBRARY"></script>
     <script
       src="https://kit.fontawesome.com/2f1bf0eac7.js"
       crossorigin="anonymous"
     ></script>
 
-    <link rel="stylesheet" href="../css/main-page.css" />
   </head>
   <body>
     <main>
       <header>
         <!-- 클릭시 메인으로 이동하는 로고 -->
+        <!-- 김민성 확인용 -->
         <section>
           <a href="#">
             <img src="../src/로고.png" id="home-logo" />
@@ -70,8 +72,8 @@
           <nav>
             <ul>
               <li>
-                <i class="fa-solid fa-house" id="nav-home"></i>
-                <a href="#"> 홈</a>
+                  <i class="fa-solid fa-house" id="nav-home"></i>
+                  <a href="#">홈</a>
               </li>
               <li>
                 <i class="fa-regular fa-bell" id="nav-notice"></i>
@@ -107,7 +109,80 @@
           </article>
 
           <!-- 지도 부분 -->
-          <section class="map"></section>
+
+          <section>
+            <div id="map" style="width:1000px;height:400px;"></div>
+            <script>
+              // 호옥시 궁금해하실까봐 좀 끄적여봤습니다 api가 응용방법이 너무많아서 그중에 하나라고 생각하시면되용
+              //  다중 마커 생성을 위한 데이터입니다
+              var positions = [
+                {
+                  title: "강남역",  //title 쉽게 말해서 오버레이에서 나타낼 제목입니다
+                  latlng: new kakao.maps.LatLng(37.498004, 127.027771), // 마커의 좌표를 설정했습니다
+                  content: "강남역 위치핑" // content 쉽게 말해서 오버레이에서 나타낼 내용입니다
+                },
+                {
+                  title: "역삼역",
+                  latlng: new kakao.maps.LatLng(37.500828, 127.036925),
+                  content: "역삼역 위치핑"
+                },
+                {
+                  title: "신논현역",
+                  latlng: new kakao.maps.LatLng(37.504571, 127.024829),
+                  content: "신논현역 위치핑"
+                }
+              ];
+
+              // 다중 마커와 오버레이 생성 함수
+              function createMarker(map, position) {
+                var marker = new kakao.maps.Marker({
+                  map: map, 
+                  position: position.latlng
+                });
+
+                // 지금상태의 overlay는 더미데이터로 만들었습니다 그래서 실제 게시판에서 못얻어옵니다 ㅜㅜㅜ 열심히 공부할게요..
+                //overlay의 html을 먹이는 객체입니다 위의 positions가 들어갈 틀입니다
+
+                var overlay = new kakao.maps.CustomOverlay({ 
+                  content: '<div class="customoverlay">' +
+                            '<h3>' + position.title + '</h3>' +
+                            '<div class="body">' +
+                              '<div class="desc">' +
+                                '<p>' + position.content + '</p>' +
+                              '</div>' +
+                            '</div>' +
+                          '</div>',
+                  map: map, //map위에 표시합니다
+                  position: marker.getPosition(), //marker.getPosition()을 통해 위치를 지정합니다
+                  yAnchor: 1, // 오버레이 아래쪽이 마커 위치에 맞게 설정합니다
+                  xAnchor: 0.5 // 오버레이 중앙이 마커 위치에 맞게 설정합니다
+                });
+
+                //EventListener를 이용해서 오버레이에 이벤트를 발생시킵니다 마커를 클릭하면 여는 function구현
+                kakao.maps.event.addListener(marker, 'click', function() {
+                  overlay.setMap(map);
+                });
+                //EventListener를 이용해서 오버레이에 이벤트를 발생시킵니다 맵을 클릭하면 닫는 function구현
+                kakao.maps.event.addListener(map, 'click', function() {
+                  overlay.setMap(null);
+                });
+              }
+
+              // 지도 생성 및 마커 생성 함수 호출
+              var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+                  mapOption = { 
+                      center: new kakao.maps.LatLng(37.498004, 127.027771), // 지도의 중심좌표
+                      level: 5 // 지도의 확대 레벨
+                  };
+
+              var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성하는 map객체를 생성합니다
+
+              for (var i = 0; i < positions.length; i++) {
+                createMarker(map, positions[i]); // for문을 이용해서 각 마커가 위치에 표시될수 있게 하고 오버레이가 위치할수있게 했습니다
+              }
+            </script>
+          </section>
+
 
           <!-- 날짜 -->
           <section class="date"></section>
