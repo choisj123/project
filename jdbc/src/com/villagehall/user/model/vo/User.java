@@ -4,52 +4,32 @@ public class User {
 	
 	// 회원 필드
 	private int userNo; // 회원 번호
-	private String userId; // 아이디
+	private String userNickname; // 닉네임
+	private String userEmail; // 이메일
 	private String userPw; // 비밀번호
-	private String userName; // 회원 이름
-	private String nickname; // 닉네임
-	private String email; // 이메일
-	private String phone; // 연락처
-	private String profile; // 프로필 사진
-	private String enrollDate; // 가입일
-	private String secessionFlag; // 탈퇴여부
+	private String userCreateDate; // 가입일
+	private String kakaoUserKey; // 카카오 유저키
+	private String userDeleteFG; // 탈퇴여부
+	private String administer; // 관리자 여부
 	
 	// 기본 생성자
 	public User() {
 		// TODO Auto-generated constructor stub
 	}
 
-	//매개변수 생성자
-	public User(int userNo, String userId, String userPw, String userName, String nickname, String email, String phone,
-			String profile, String enrollDate, String secessionFlag) {
+	public User(int userNo, String userNickname, String userEmail, String userPw, String userCreateDate,
+			String kakaoUserKey, String userDeleteFG, String administer) {
 		super();
 		this.userNo = userNo;
-		this.userId = userId;
+		this.userNickname = userNickname;
+		this.userEmail = userEmail;
 		this.userPw = userPw;
-		this.userName = userName;
-		this.nickname = nickname;
-		this.email = email;
-		this.phone = phone;
-		this.profile = profile;
-		this.enrollDate = enrollDate;
-		this.secessionFlag = secessionFlag;
-	}
-	
-	// 매개변수 생성자2 (비밀번호 탈퇴여부 제외)
-	public User(int userNo, String userId, String userName, String nickname, String email, String phone, String profile,
-			String enrollDate) {
-		super();
-		this.userNo = userNo;
-		this.userId = userId;
-		this.userName = userName;
-		this.nickname = nickname;
-		this.email = email;
-		this.phone = phone;
-		this.profile = profile;
-		this.enrollDate = enrollDate;
+		this.userCreateDate = userCreateDate;
+		this.kakaoUserKey = kakaoUserKey;
+		this.userDeleteFG = userDeleteFG;
+		this.administer = administer;
 	}
 
-	//메서드
 	public int getUserNo() {
 		return userNo;
 	}
@@ -58,12 +38,20 @@ public class User {
 		this.userNo = userNo;
 	}
 
-	public String getUserId() {
-		return userId;
+	public String getUserNickname() {
+		return userNickname;
 	}
 
-	public void setUserId(String userId) {
-		this.userId = userId;
+	public void setUserNickname(String userNickname) {
+		this.userNickname = userNickname;
+	}
+
+	public String getUserEmail() {
+		return userEmail;
+	}
+
+	public void setUserEmail(String userEmail) {
+		this.userEmail = userEmail;
 	}
 
 	public String getUserPw() {
@@ -74,61 +62,36 @@ public class User {
 		this.userPw = userPw;
 	}
 
-	public String getUserName() {
-		return userName;
+	public String getUserCreateDate() {
+		return userCreateDate;
 	}
 
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setUserCreateDate(String userCreateDate) {
+		this.userCreateDate = userCreateDate;
 	}
 
-	public String getNickname() {
-		return nickname;
+	public String getKakaoUserKey() {
+		return kakaoUserKey;
 	}
 
-	public void setNickname(String nickname) {
-		this.nickname = nickname;
+	public void setKakaoUserKey(String kakaoUserKey) {
+		this.kakaoUserKey = kakaoUserKey;
 	}
 
-	public String getEmail() {
-		return email;
+	public String getUserDeleteFG() {
+		return userDeleteFG;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setUserDeleteFG(String userDeleteFG) {
+		this.userDeleteFG = userDeleteFG;
 	}
 
-	public String getPhone() {
-		return phone;
+	public String getAdminister() {
+		return administer;
 	}
 
-	public void setPhone(String phone) {
-		this.phone = phone;
-	}
-
-	public String getProfile() {
-		return profile;
-	}
-
-	public void setProfile(String profile) {
-		this.profile = profile;
-	}
-
-	public String getEnrollDate() {
-		return enrollDate;
-	}
-
-	public void setEnrollDate(String enrollDate) {
-		this.enrollDate = enrollDate;
-	}
-
-	public String getSecessionFlag() {
-		return secessionFlag;
-	}
-
-	public void setSecessionFlag(String secessionFlag) {
-		this.secessionFlag = secessionFlag;
+	public void setAdminister(String administer) {
+		this.administer = administer;
 	}
 	
-
 }

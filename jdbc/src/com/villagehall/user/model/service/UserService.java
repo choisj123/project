@@ -59,11 +59,10 @@ public class UserService {
 
 	/** 이메일 변경 서비스
 	 * @param userId
-	 * @param updateEmail
 	 * @return result
 	 * @throws Exception
 	 */
-	public int updateEmail(String userId, String updateEmail) throws Exception{
+	public int updateEmail(String userId) throws Exception{
 		
 		Connection conn = getConnection();
 		

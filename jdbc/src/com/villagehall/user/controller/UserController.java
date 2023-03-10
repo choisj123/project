@@ -28,8 +28,7 @@ public class UserController {
 	public void userMenu(User loginUser) {
 		
 		this.loginUser = loginUser;
-		
-		System.out.println(loginUser.getUserName());
+
 		
 		
 		do {
@@ -126,8 +125,8 @@ public class UserController {
 	 */
 	private void updateNickname(User loginUser) {
 		
-		String CurrentNickname = loginUser.getNickname();
-		String userId = loginUser.getUserId();
+		String CurrentNickname = loginUser.getUserNickname();
+		String userId = loginUser.getUserEmail();
 		
 		try {
 			while(true) {
@@ -172,14 +171,13 @@ public class UserController {
 	 */
 	private void updateEmail(User loginUser) {
 		
-		String currentEmail = loginUser.getEmail();
-		String userId = loginUser.getUserId();
+		String currentEmail = loginUser.getUserEmail();
 		
 		try {
 			System.out.println("변경할 이메일 : ");
 			String updateEmail = sc.next();
 			
-			int result = service.updateEmail(userId, updateEmail);
+			int result = service.updateEmail(updateEmail);
 			
 			System.out.println();
 			
@@ -203,7 +201,7 @@ public class UserController {
 	 */
 	private void updatePw(User loginUser) {
 		
-		String userId = loginUser.getUserId();
+		String userId = loginUser.getUserEmail();
 		
 		try {
 			

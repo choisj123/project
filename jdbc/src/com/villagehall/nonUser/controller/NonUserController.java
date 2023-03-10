@@ -193,7 +193,7 @@ public class NonUserController {
 			
 			System.out.println();
 			if(loginUser != null) { // 로그인 성공
-				System.out.println(loginUser.getNickname() + "님 환영합니다");
+				System.out.println(loginUser.getUserNickname() + "님 환영합니다");
 				userController.userMenu(loginUser);
 			} else { // 로그인 실패
 				System.out.println("아이디나 비밀번호 불일치");
